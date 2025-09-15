@@ -63,7 +63,7 @@ const CoverPage = () => {
           </div>
           
           <div className="pt-6 mt-6 border-t border-border/20 text-center">
-            <p className="font-medium text-secondary">Launching August 15, 2025</p>
+            <p className="font-medium text-secondary">Launching September 16 2025</p>
             <p className="text-sm text-muted-foreground mt-1">From KPRCAS Incubation Hub</p>
           </div>
         </div>
