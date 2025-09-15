@@ -12,7 +12,7 @@ const AncientVsModern = () => {
     },
     {
       icon: <Cog className="w-8 h-8 text-primary" />,
-      title: "Iron Technology", 
+      title: "Iron Technology",
       ancient: "Superior metallurgy producing Damascus steel, advanced smelting techniques using monsoonal winds",
       modern: "Nano-enhanced materials, 3D printing with metal alloys, and precision manufacturing systems",
       tamilQuote: "கல்விச் செல்வம் கசடு அற விரும்பு",
@@ -38,6 +38,12 @@ const AncientVsModern = () => {
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-3xl mx-auto">
             Discovering how timeless Tamil innovations continue to inspire today's breakthrough technologies
+          </p>
+          <p className="text-sm text-foreground/60 mb-2">Tamil Content Courtesy:</p>
+          <p className="font-title text-primary mb-4">Prof. Loganathan</p>
+          <p className="font-title text-primary mb-4">Department of Tamil, KPRCAS</p>
+          <p className="text-sm text-foreground/60 mt-2">
+            With research inputs from archaeological sources and regional field study.
           </p>
         </div>
 
@@ -68,7 +74,7 @@ const AncientVsModern = () => {
                   <p className="font-body text-foreground leading-relaxed">
                     {comp.ancient}
                   </p>
-                  
+
                   {/* Tamil Quote */}
                   <div className="bg-secondary/10 p-4 rounded-lg border-l-4 border-secondary">
                     <p className="font-heading text-primary text-lg mb-2">
@@ -91,7 +97,7 @@ const AncientVsModern = () => {
                   <p className="font-body text-foreground leading-relaxed">
                     {comp.modern}
                   </p>
-                  
+
                   {/* Connection Insight */}
                   <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-primary">
                     <p className="font-body-bold text-primary text-sm">

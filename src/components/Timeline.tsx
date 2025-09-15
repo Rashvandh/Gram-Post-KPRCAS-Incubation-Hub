@@ -3,14 +3,14 @@ import { CheckCircle, Clock, Star, Calendar } from "lucide-react";
 const Timeline = () => {
   const milestones = [
     {
-      date: "Mar 2025",
+      date: "March 2025",
       title: "Seyal Vadivam",
       description: "Launch of our flagship Design Thinking Program, Version 1.0, focused on empathy-led problem solving and structured innovation across disciplines.",
       status: "completed",
       category: "Initiative"
     },
     {
-      date: "Apr 2025",
+      date: "April 2025",
       title: "MoUs with India's Leading Incubation Bodies",
       description: "Initiated formal partnerships with IIT Palakkad and IIT-M Pravartak Technology Foundation, hosted by IIT Madras and funded by the Department of Science and Technology, Government of India.",
       status: "completed",
@@ -25,40 +25,41 @@ const Timeline = () => {
       title: "TEDxKPRCAS License Secured",
       description: "KPRCAS received a free license to host TEDx, an independently organized, TED-style event focused on 'ideas worth spreading' — locally led, globally inspired.",
       status: "completed",
-      category: "Achievement"
+      category: "Achievement",
+      images:["https://res.cloudinary.com/dmwvo0u6p/image/upload/v1757956318/WhatsApp_Image_2025-09-15_at_17.21.28_688c9ab5_unnynk.jpg"]
     },
     {
-      date: "Jun 2025",
+      date: "June 2025",
       title: "First Startup Pitch to Principal",
       description: "A Cambridge alumnus-founded AgriTech startup pitched to set up a product company in collaboration with our incubation ecosystem.",
       status: "completed",
       category: "Milestone"
     },
     {
-      date: "Jul 2025",
+      date: "July 2025",
       title: "MoU with IIT Palakkad & ABIN Lab Launch",
-      description: "Launched the Open Call for Incubation and the ABIN Lab initiative, nurturing student product teams. 80+ students registered | 6 teams currently incubated. An Alumni of KPRCAS Mr. Bavishnu joined as first employee of Incubation Hub as an Executive.",
+      description: "• Launched the Open Call for Incubation and the ABIN Lab initiative, nurturing student product teams.\n• 80+ students registered | 6 teams currently incubated\n• An Alumni of KPRCAS Mr. Bavishnu joined as first employee of Incubation Hub as an Executive",
       status: "completed",
       category: "Growth"
     },
     {
-      date: "Aug 2025",
+      date: "August 2025",
       title: "Space, Summit & StartupTN",
-      description: "MoU signed with IIT-M Pravartak (Chennai). KPRCAS selected as an Academic Partner to StartupTN for the Tamil Nadu Global Startup Summit 2025. 7500 sq. ft. dedicated space approved for KPRCAS Incubation Hub — to be operational soon. Our incubator will showcase its vision to the global startup audience.",
+      description: "• MoU signed with IIT-M Pravartak (Chennai).\n• KPRCAS selected as an Academic Partner to StartupTN for the Tamil Nadu Global Startup Summit 2025.\n• 7500 sq. ft. dedicated space approved for KPRCAS Incubation Hub — to be operational soon.\n• Our incubator will showcase its vision to the global startup audience.",
       status: "in-progress",
       category: "Expansion"
     },
     {
-      date: "Sep 2025",
-      title: "Pre-Event Pulse Check & Gram Post Launch",
-      description: "From a pre-event survey: 712 students want to become founders, 492 want to build their own startups, 199 aspire to be among India's top 100 innovators. Launched the Gram Post newsletter — where sparks get shared.",
+      date: "September 2025",
+      title: "Pre-Event Pulse Check",
+      description: "From a pre-event survey:\n→ 712 students want to become founders\n→ 492 want to build their own startups\n→ 199 aspire to be among India's top 100 innovators\n\n📯 And… we launched this very newsletter:\nGram Post — where sparks get shared.",
       status: "in-progress",
-      category: "Community"
+      category: "Engagement"
     },
     {
-      date: "2025 & Beyond",
+      date: "Future",
       title: "KPRCAS Incubation Forward",
-      description: "An integrated roadmap of student-led programs, events, and unseen sparks, all shaping the next chapter of our Startup ecosystem.",
+      description: "With our foundation laid, a new phase quietly takes form.\n\nComing up next under our umbrella initiative:\n\n🧭 KPRCAS Incubation Forward\n\nAn integrated roadmap of student-led programs, events, and unseen sparks, all shaping the next chapter of our Startup ecosystem.\n\nStay Tuned.",
       status: "upcoming",
       category: "Vision"
     }
@@ -96,6 +97,7 @@ const Timeline = () => {
       case "Partnership": return "bg-teal-500/20 text-teal-700";
       case "Milestone": return "bg-red-500/20 text-red-700";
       case "Vision": return "bg-indigo-500/20 text-indigo-700";
+      case "Engagement": return "bg-cyan-500/20 text-cyan-700";
       default: return "bg-muted text-muted-foreground";
     }
   };
@@ -167,20 +169,19 @@ const Timeline = () => {
                   </p>
 
                   {milestone.images && (
-                    <div className="mt-3 grid grid-cols-2 gap-2">
+                    <div className={`mt-3 ${milestone.images.length > 1 ? 'grid grid-cols-2 gap-2' : 'w-full'}`}>
                       {milestone.images.map((img, imgIndex) => (
                         <a 
                           key={imgIndex} 
                           href={img} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="block overflow-hidden rounded-lg border border-border hover:border-primary transition-colors"
+                          className={`block ${milestone.images.length === 1 ? 'w-full max-w-2xl mx-auto' : ''}`}
                         >
                           <img 
                             src={img} 
-                            alt={`${milestone.title} - Image ${imgIndex + 1}`}
-                            className="w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
-                            loading="lazy"
+                            alt={`${milestone.title} ${imgIndex + 1}`} 
+                            className={`w-full h-auto rounded-lg border border-border ${milestone.images.length === 1 ? 'max-h-96 object-contain' : 'h-32 object-cover'}`}
                           />
                         </a>
                       ))}

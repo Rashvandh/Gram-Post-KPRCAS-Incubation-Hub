@@ -77,10 +77,10 @@ const ActivityRewards = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="min-h-screen flex flex-col items-center py-20 px-4 md:px-8">
+      <div className="w-full max-w-7xl mx-auto text-center flex-1 flex flex-col">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <Trophy className="w-8 h-8 text-secondary animate-glow-pulse" />
             <h2 className="font-title text-primary" style={{ fontSize: 'var(--heading-size)' }}>
@@ -94,9 +94,9 @@ const ActivityRewards = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="flex-1 grid lg:grid-cols-3 gap-12 justify-items-center">
           {/* Activities Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 w-full max-w-4xl">
             <h3 className="font-heading text-primary text-2xl mb-8 text-center">
               Current & Upcoming Activities
             </h3>
@@ -160,7 +160,7 @@ const ActivityRewards = () => {
           </div>
 
           {/* Rewards Section */}
-          <div>
+          <div className="w-full max-w-md">
             <h3 className="font-heading text-primary text-2xl mb-8 text-center">
               Achievement Rewards
             </h3>
@@ -208,8 +208,8 @@ const ActivityRewards = () => {
                     <div key={index} className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${index === 0 ? 'bg-secondary text-white' :
-                            index === 1 ? 'bg-gray-400 text-white' :
-                              'bg-orange-400 text-white'
+                          index === 1 ? 'bg-gray-400 text-white' :
+                            'bg-orange-400 text-white'
                           }`}>
                           {index + 1}
                         </div>
@@ -226,11 +226,40 @@ const ActivityRewards = () => {
           </div>
         </div>
       </div>
-      {/* Copyright Footer */}
-      <footer className="mt-16 py-6 text-center border-t border-border/50">
-        <p className="font-body text-muted-foreground text-sm">
-          {new Date().getFullYear()} KPRCAS Incubation Hub. All rights reserved.
-        </p>
+      
+      {/* Footer */}
+      <footer className="w-full mt-auto pt-8 border-t border-border/50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex flex-col items-center space-y-6 py-6">
+            <div className="flex flex-col items-center space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-2xl font-title text-primary">KPRCAS</span>
+                <span className="text-muted-foreground">Incubation Hub</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <div className="border-t border-border/50 pt-6 pb-8">
+            <p className="text-xs text-muted-foreground">
+              &copy; {new Date().getFullYear()} KPRCAS Incubation Hub. All rights reserved.
+            </p>
+            <p className="text-xs text-muted-foreground mt-2">
+              Empowering innovation through tradition and technology
+            </p>
+          </div>
+        </div>
       </footer>
     </section>
   );

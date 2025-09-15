@@ -196,16 +196,6 @@ const StartupSpotlight = () => {
           </div>
         </div>
       </div>
-      
-      {/* Copyright Footer */}
-      <footer className="mt-16 py-6 text-center border-t border-border/50">
-        <p className="font-body text-muted-foreground text-sm">
-          {new Date().getFullYear()} KPRCAS Incubation Hub. All rights reserved.
-        </p>
-        <p className="font-body text-muted-foreground/80 text-xs mt-2">
-          In collaboration with Anjaraipetti | Designed with ❤️ for innovators
-        </p>
-      </footer>
     </section>
   );
 };
