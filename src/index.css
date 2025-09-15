@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gram Post Design System - Heritage meets Innovation
+All colors MUST be HSL. Tamil-inspired with modern startup elements.
+*/
+
+@layer base {
+  :root {
+    /* Heritage Color Palette */
+    --background: 45 35% 95%; /* Warm parchment base */
+    --foreground: 0 0% 15%; /* Deep charcoal text */
+
+    --card: 45 50% 98%; /* Lighter parchment for cards */
+    --card-foreground: 0 0% 15%;
+
+    --popover: 45 50% 98%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Maroon Primary - Deep heritage red */
+    --primary: 0 100% 25%; /* Maroon #800000 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Gold Secondary - Tamil temple gold */
+    --secondary: 43 77% 52%; /* Gold #D4AF37 */
+    --secondary-foreground: 0 0% 15%;
+
+    /* Muted tones for subtle elements */
+    --muted: 45 25% 88%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Accent for highlights */
+    --accent: 43 77% 52%; /* Gold accent */
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 25% 85%;
+    --input: 45 25% 90%;
+    --ring: 43 77% 52%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom Design Tokens */
+    --parchment-gradient: linear-gradient(135deg, hsl(45 35% 95%), hsl(43 30% 92%));
+    --gold-gradient: linear-gradient(135deg, hsl(43 77% 52%), hsl(45 85% 60%));
+    --maroon-gradient: linear-gradient(135deg, hsl(0 100% 25%), hsl(0 90% 30%));
+    
+    /* Animations & Effects */
+    --scroll-shadow: 0 4px 20px hsl(0 100% 25% / 0.1);
+    --card-shadow: 0 8px 32px hsl(0 100% 25% / 0.08);
+    --glow-effect: 0 0 30px hsl(43 77% 52% / 0.3);
+    
+    /* Typography scales */
+    --title-size: clamp(2.5rem, 5vw, 4rem);
+    --heading-size: clamp(1.5rem, 3vw, 2.5rem);
+    --body-size: clamp(1rem, 2vw, 1.125rem);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image: url('/src/assets/parchment-texture.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Typography */
+  .font-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+  }
+
+  .font-heading {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+  }
+
+  .font-body {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+  }
+
+  .font-body-bold {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+  }
+
+  /* Custom Components */
+  .scroll-card {
+    @apply bg-card/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50;
+    background: var(--parchment-gradient);
+  }
+
+  .heritage-border {
+    border-image: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary))) 1;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  .glow-effect {
+    box-shadow: var(--glow-effect);
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
